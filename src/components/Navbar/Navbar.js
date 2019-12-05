@@ -1,9 +1,9 @@
 import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
 
-import '/Navbar.css'
+import './Navbar.css'
 
-cost Navbar = (props) => {
+const Navbar = (props) => {
   return (
     <nav className="navbar navbar-expand-md navbar-dark navbar-color">
       <div className="container">
@@ -38,3 +38,5 @@ cost Navbar = (props) => {
     </nav>
   )
 }
+
+export default Navbar;
