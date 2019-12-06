@@ -24,13 +24,13 @@ const Navbar = (props) => {
             <li className="nav-item" id="register-button">
               {!props.currentUser && <Register />}
             </li>
-            {/* <li className="nav-item">
-              {props.currentUser && <NavLink className="nav-link title-color" id="supreme-emperor12" exact to="/cities/san-francisco">Cities</NavLink>}
-            </li> */}
+            <li className="nav-item">
+              {props.currentUser && <NavLink className="nav-link title-color" exact to="/cast">Cast</NavLink>}
+            </li>
           
-            {/* <li className="nav-item">
+            <li className="nav-item">
               {props.currentUser && <NavLink className="nav-link title-color" exact to="/profile">Profile</NavLink>}
-            </li> */}
+            </li>
             <li className="nav-item">
               {props.currentUser &&  <button className="btn btn-warning" onClick={() => props.logout() }>Logout</button>}
             </li>
