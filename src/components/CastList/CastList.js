@@ -7,6 +7,7 @@ const CastList = (props) => {
     return(
       <CastListRow
         key={cast._id}
+        id={cast._id}
         birthDate={cast.birthDate}
         englishName={cast.englishName}
         japaneseName={cast.japaneseName}

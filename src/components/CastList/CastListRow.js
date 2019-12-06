@@ -6,13 +6,13 @@ const CastListRow = (props) => {
   return (
     <>
       <div className="row">
-        <h2><Link to="/">{props.englishName}</Link></h2>
+        <h2><Link to={`/cast/`+props.id} >{props.englishName}</Link></h2>
         <dl>
           <dd>Birthday - {props.birthDate}</dd>
           <dd>Gender - {props.gender}</dd>
           <dd>Japanese Name - {props.japaneseName} </dd>
           <dd>Nickname - {props.nickName} </dd>
-          <dd><img src={`${props.mainPicture}`} /> </dd>
+          <dd><img src={`${props.mainPicture}`} alt={props.englishName}/> </dd>
         </dl>
       </div>
     </>
