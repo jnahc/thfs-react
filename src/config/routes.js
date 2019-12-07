@@ -11,7 +11,8 @@ export default ({currentUser}) =>
     <Route exact path="/" component={Home} />
     <Route path='/profile' component={ProfileContainer} />
     <Route path='/cast-list' component={CastListContainer} />
-    <Route path='/cast/:castId' component={CastDetailContainer} /> />
+    {/* <Route path='/cast/:castId' component={CastDetailContainer} /> /> */}
+    <Route path='/cast/:castId' render={() => <CastDetailContainer currentUser={currentUser} />} /> />
   </Switch>
   
 )

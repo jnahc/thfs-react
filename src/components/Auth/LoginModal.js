@@ -30,7 +30,7 @@ function LoginModal (props) {
                     <label htmlFor="password">Password</label>
                     <input onChange={props.handleChange} className="form-control form-control-lg" type="password" id="password" name="password" value={props.user.password} />
                   </div>
-                  <button id="login-button" onClick={handleClose} className="btn btn-primary float-right" type="submit">Login</button><button id="login-close" onClick={handleCLose} >Cancel</button>
+                  <button id="login-button" onClick={handleClose} className="btn btn-primary float-right" type="submit">Login</button><button id="login-close" onClick={handleClose} >Cancel</button>
                 </form>
               </div>
             </div>

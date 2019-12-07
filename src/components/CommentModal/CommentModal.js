@@ -12,7 +12,7 @@ function CommentModal(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Register
+        Comment
       </Button>
 
       <Modal show={show} onHide={handleClose} >
@@ -23,12 +23,12 @@ function CommentModal(props) {
         </Modal.Header>
         <Modal.Body>
           <div className="col">
-            <form onSubmit={props.handleSumbit}>
+            <form onSubmit={props.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="body">Comment</label>
                 <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="body" name="body" value={props.comment.body} />
                 <button id="comment-button" onClick={handleClose} className="btn btn-primary">Save Comment</button>
-                <button id="comment-close" onClick={handleCLose} >Cancel</button>
+                <div id="comment-close" onClick={handleClose} >Cancel</div>
               </div>
             </form>
           </div>

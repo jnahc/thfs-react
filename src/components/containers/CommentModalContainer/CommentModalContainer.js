@@ -5,6 +5,18 @@ import axios from 'axios';
 class CommentModalContainer extends Component {
   state = {
     body: "",
+    author: "",
+    cast: "",
+  }
+  
+  componentDidMount() {
+    const currentUser = this.props.currentUser;
+    const currentCast = window.location.pathname.split('/')[2];
+    this.setState({
+      author: currentUser,
+      cast: currentCast
+    })
+    
   }
 
   handleChange = (event) => {
@@ -15,8 +27,8 @@ class CommentModalContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
-    axios.post(`${process.env.REACT_APP_API_URL}/comments`, this.state)
+    console.log('handleSubmit fired',this.state);
+    axios.post(`${process.env.REACT_APP_API_URL}/comments/${this.props.currentUser}/${window.location.pathname.split('/')[2]}`, this.state)
       .then((res) => {
         console.log(res);
       })
@@ -25,7 +37,7 @@ class CommentModalContainer extends Component {
 
   render(){
     return(
-      <CommentModal handleChange={this.handleChange} handleSubmit={this.handleSubmit} comment={this.state} />
+      <CommentModal handleChange={this.handleChange} handleSubmit={this.handleSubmit} comment={this.state} currentUser={this.props.currentUser} />
     )
   };
 
