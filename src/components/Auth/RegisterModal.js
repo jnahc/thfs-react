@@ -44,7 +44,7 @@ function RegisterModal(props) {
                 <label htmlFor="password2">Confirm Password</label>
                 <input onChange={props.handleChange} className="form-control form-control-lg" type="password" id="password2" name="password2" value={props.user.password2} />
               </div>
-              <button id="register-button" onClick={handleClose} className="btn btn-primary" type="submit">Register</button>
+              <button id="register-button" onClick={handleClose} className="btn btn-primary" type="submit">Register</button><button id="register-close" onClick={handleCLose} >Cancel</button>
             </form>
           </div>
         </div>
