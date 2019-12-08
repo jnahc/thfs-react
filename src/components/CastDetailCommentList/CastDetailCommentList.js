@@ -2,7 +2,6 @@ import React from 'react';
 import CastDetailCommentRowContainer from "../containers/CastDetailCommentRowContainer/CastDetailCommentRowContainer";
 
 
-
 const CastDetailCommentList = (props) => {
   const list = props.commentList.map((comment) => {    
     return(

@@ -3,10 +3,12 @@ import CastDetailCommentList from "../../CastDetailCommentList/CastDetailComment
 import axios from 'axios';
 
 class CastCommentContainer extends Component {
+
   state = {
-    commentList: [],
-    castId: "",
+  commentList: [],
+  castId: "",
   }
+  
 
   componentDidMount () {
     this.grabCommentList();
@@ -36,7 +38,7 @@ class CastCommentContainer extends Component {
     return (
       <>
         <h1>This is the CastCommentContainer</h1>
-        <CastDetailCommentList currentCast={this.state.castId} currentUser={this.props.currentUser} commentList={this.state.commentList} castName={this.props.castName} />
+        <CastDetailCommentList currentCast={this.state.castId} currentUser={this.props.currentUser} commentList={this.state.commentList} castName={this.props.castName}/>
       </>
     );
   };
