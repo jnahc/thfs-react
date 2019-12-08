@@ -33,6 +33,9 @@ class CommentModalContainer extends Component {
         console.log(res);
       })
       .catch((err) => console.log(err));
+    this.setState({
+      body: "",
+    });
   };
 
   render(){

@@ -4,6 +4,7 @@ import "./CastList.css"
 
 const CastList = (props) => {
   const list = props.castList.map((cast) => {
+    
     return(
       <CastListRow
         key={cast._id}
@@ -17,6 +18,7 @@ const CastList = (props) => {
       />
     )
   });
+
   return (
     <div>
       This is the CastList component

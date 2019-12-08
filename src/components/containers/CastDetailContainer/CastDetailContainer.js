@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import CastDetail from '../../CastDetail/CastDetail';
-import CommentModalContainer from "../CommentModalContainer/CommentModalContainer"
+import CommentModalContainer from "../CommentModalContainer/CommentModalContainer";
+import CastCommentContainer from "../CastCommentContainer/CastCommentContainer";
 
 class CastDetailContainer extends Component {
   state = {
@@ -56,7 +57,7 @@ class CastDetailContainer extends Component {
         <h2>This is the CastDetailContainer</h2>
         <CastDetail castDetails={this.state} />
         <CommentModalContainer currentUser={this.props.currentUser} />
-
+        <CastCommentContainer currentUser={this.props.currentUser} />
       </>
     )
   }
