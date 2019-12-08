@@ -18,7 +18,6 @@ class CastDetailCommentRowContainer extends Component {
     this.onEdit = this.onEdit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
     this.setDeleteFalse = this.setDeleteFalse.bind(this);
     this.setDeleteTrue = this.setDeleteTrue.bind(this);
   }
@@ -87,12 +86,11 @@ class CastDetailCommentRowContainer extends Component {
         this.setState({
           editComment: false,
         }) 
-        this.setEditCommentFalse()
         // window.location.reload();
         // this.props.history.push('/cast')
+        // this.props.grabCommentList()
       })
       .catch((err) => console.log(err))
-    this.forceUpdate()
   }
 
   // setEditCommentFalse () {
@@ -101,21 +99,12 @@ class CastDetailCommentRowContainer extends Component {
   //   })
   // }
 
-  handleDelete = (event) => {
-    event.preventDefault();
-    axios.delete(`${process.env.REACT_APP_API_URL}/comments/${this.props.comment._id}`)
-      .then((res) => {
-        console.log(res)
-        this.setDeleteFalse()
-        window.location.reload();
-      })
-      .catch((err) => console.log(err))
-  }
+
   
   render () {
     return (
       <>
-        <CastDetailCommentRow castName={this.props.castName} details={this.state} currentUser={this.props.currentUser} onEdit={this.onEdit} editComment={this.state.editComment} handleChange={this.handleChange} body={this.state.body} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete} deleteComment={this.state.deleteComment} setDeleteFalse={this.setDeleteFalse} setDeleteTrue={this.setDeleteTrue} />
+        <CastDetailCommentRow castName={this.props.castName} details={this.state} currentUser={this.props.currentUser} onEdit={this.onEdit} editComment={this.state.editComment} handleChange={this.handleChange} body={this.state.body} handleSubmit={this.handleSubmit} deleteComment={this.state.deleteComment} setDeleteFalse={this.setDeleteFalse} setDeleteTrue={this.setDeleteTrue} handleDelete={this.props.handleDelete} />
       </>
     )
   }

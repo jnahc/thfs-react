@@ -3,12 +3,16 @@ import CastDetailCommentList from "../../CastDetailCommentList/CastDetailComment
 import axios from 'axios';
 
 class CastCommentContainer extends Component {
+  constructor(){
+    super();
+    this.state = {
+    commentList: [],
+    castId: "",
+    }
+    this.handleDelete = this.handleDelete.bind(this);
+    
 
-  state = {
-  commentList: [],
-  castId: "",
   }
-  
 
   componentDidMount () {
     this.grabCommentList();
@@ -21,6 +25,15 @@ class CastCommentContainer extends Component {
       castId: currentCast,      
     })
 
+  }
+
+  handleDelete = (postId) => {
+    axios.delete(`${process.env.REACT_APP_API_URL}/comments/${postId}`)
+      .then((res) => {
+        console.log(res)
+        this.grabCommentList()     
+      })
+      .catch((err) => console.log(err))
   }
 
   grabCommentList () {
@@ -38,7 +51,7 @@ class CastCommentContainer extends Component {
     return (
       <>
         <h1>This is the CastCommentContainer</h1>
-        <CastDetailCommentList currentCast={this.state.castId} currentUser={this.props.currentUser} commentList={this.state.commentList} castName={this.props.castName} grabCommentList={this.grabCommentList} />
+        <CastDetailCommentList currentCast={this.state.castId} currentUser={this.props.currentUser} commentList={this.state.commentList} castName={this.props.castName} handleDelete={this.handleDelete} />
       </>
     );
   };

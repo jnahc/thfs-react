@@ -37,9 +37,9 @@ const CastDetailCommentRow = (props) => {
       <>
         <div className="card">
           <h1 className="mb-3" id="words-edit-post">Are you sure you want to delete?</h1>
-          <form onSubmit={props.handleDelete}>
+          <form>
             <div className="form-group">
-              <button id="comment-button" className="btn btn-primary">Delete</button>
+              <div onClick={()=>props.handleDelete(props.details.comment._id)} id="comment-button" className="btn btn-primary">Delete</div>
               <div onClick={props.setDeleteFalse} className="btn btn-primary">Cancel</div>
             </div>
           </form>
