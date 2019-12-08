@@ -1,4 +1,5 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom'
 import CastDetailCommentRowContainer from "../containers/CastDetailCommentRowContainer/CastDetailCommentRowContainer";
 
 
@@ -23,4 +24,4 @@ const CastDetailCommentList = (props) => {
   )
 };
 
-export default CastDetailCommentList;
+export default withRouter(CastDetailCommentList);

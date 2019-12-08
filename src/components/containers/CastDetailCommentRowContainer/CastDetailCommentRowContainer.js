@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 import CastDetailCommentRow from "../../CastDetailCommentRow/CastDetailCommentRow";
 import axios from 'axios';
 
@@ -86,8 +87,9 @@ class CastDetailCommentRowContainer extends Component {
         this.setState({
           editComment: false,
         }) 
+        window.location.reload();
       })
-      .catch((err) => console.log(err))      
+      .catch((err) => console.log(err))
   }
 
   handleDelete = (event) => {
@@ -96,6 +98,7 @@ class CastDetailCommentRowContainer extends Component {
       .then((res) => {
         console.log(res)
         this.setDeleteFalse()
+        window.location.reload();
       })
       .catch((err) => console.log(err))
   }
@@ -109,4 +112,4 @@ class CastDetailCommentRowContainer extends Component {
   }
 }
 
-export default CastDetailCommentRowContainer
+export default withRouter(CastDetailCommentRowContainer);
