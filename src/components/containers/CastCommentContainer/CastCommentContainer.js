@@ -38,7 +38,7 @@ class CastCommentContainer extends Component {
     return (
       <>
         <h1>This is the CastCommentContainer</h1>
-        <CastDetailCommentList currentCast={this.state.castId} currentUser={this.props.currentUser} commentList={this.state.commentList} castName={this.props.castName}/>
+        <CastDetailCommentList currentCast={this.state.castId} currentUser={this.props.currentUser} commentList={this.state.commentList} castName={this.props.castName} grabCommentList={this.grabCommentList} />
       </>
     );
   };

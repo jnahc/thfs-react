@@ -14,7 +14,6 @@ class CastDetailCommentRowContainer extends Component {
       editComment: false,
       deleteComment: false,
       body: "",
-      changed: 0,
     }
     this.onEdit = this.onEdit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -22,8 +21,9 @@ class CastDetailCommentRowContainer extends Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.setDeleteFalse = this.setDeleteFalse.bind(this);
     this.setDeleteTrue = this.setDeleteTrue.bind(this);
-
   }
+
+
 
   componentDidMount() {
     this.setProps()
@@ -87,10 +87,19 @@ class CastDetailCommentRowContainer extends Component {
         this.setState({
           editComment: false,
         }) 
-        window.location.reload();
+        this.setEditCommentFalse()
+        // window.location.reload();
+        // this.props.history.push('/cast')
       })
       .catch((err) => console.log(err))
+    this.forceUpdate()
   }
+
+  // setEditCommentFalse () {
+  //   this.setState({
+  //     editComment:false
+  //   })
+  // }
 
   handleDelete = (event) => {
     event.preventDefault();
