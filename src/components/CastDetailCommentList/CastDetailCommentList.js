@@ -1,17 +1,17 @@
 import React from 'react';
-import CastDetailCommentRow from "./CastDetailCommentRow";
-import "./CastDetailCommentRow";
+import CastDetailCommentRowContainer from "../containers/CastDetailCommentRowContainer/CastDetailCommentRowContainer";
+
 
 
 const CastDetailCommentList = (props) => {
-  const list = props.commentList.map((comment) => {
-
+  const list = props.commentList.map((comment) => {    
     return(
-      <CastDetailCommentRow
-        key={comment._id}
-        id={comment._id}
-        author={comment.author}
-        body={comment.body}
+      <CastDetailCommentRowContainer
+        key={comment._id} 
+        comment={comment}
+        currentUser={props.currentUser}
+        currentCast={props.currentCast}
+        castName={props.castName}
       />
     )
   });
