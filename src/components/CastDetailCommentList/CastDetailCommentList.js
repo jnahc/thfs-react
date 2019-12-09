@@ -13,6 +13,7 @@ const CastDetailCommentList = (props) => {
         currentCast={props.currentCast}
         castName={props.castName}
         handleDelete={props.handleDelete}
+        handleSubmit={props.handleSubmit}
       />
     )
   });

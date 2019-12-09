@@ -5,29 +5,37 @@ import CommentModalContainer from "../CommentModalContainer/CommentModalContaine
 import CastCommentContainer from "../CastCommentContainer/CastCommentContainer";
 
 class CastDetailContainer extends Component {
-  state = {
-    id: "",
-    number: "",
-    englishName: "",
-    japaneseName: "",
-    nickName: "",
-    occupation: "",
-    birthDate: "",
-    gender: "",
-    firstEpisodeAppeared: "",
-    lastEpisodeAppeared: "",
-    mainPicture: "",
-    picture1: "",
-    picture2: "",
-    seasonsActive: [],
-    couples: [""],
-    comments: [""],
+  constructor(){
+    super();
+    this.state = {
+      id: "",
+      number: "",
+      englishName: "",
+      japaneseName: "",
+      nickName: "",
+      occupation: "",
+      birthDate: "",
+      gender: "",
+      firstEpisodeAppeared: "",
+      lastEpisodeAppeared: "",
+      mainPicture: "",
+      picture1: "",
+      picture2: "",
+      seasonsActive: [],
+      couples: [""],
+      comments: [""],
+    }
+    this.setProps = this.setProps.bind(this);
   }
 
   componentDidMount () {
+    this.setProps();
+    
+  }
+
+  setProps () {
     axios.get(`${process.env.REACT_APP_API_URL}/cast/${window.location.pathname.split('/')[2]}`)
       .then((res)=> {
-        // console.log('CastDetailContainer.js',res)
         this.setState({
           id:res.data.data._id,
           number: res.data.data.number,
@@ -56,7 +64,7 @@ class CastDetailContainer extends Component {
       <>
         <h2>This is the CastDetailContainer</h2>
         <CastDetail castDetails={this.state} />
-        <CommentModalContainer currentUser={this.props.currentUser} />
+        <CommentModalContainer currentUser={this.props.currentUser} setProps={this.setProps} />
         <CastCommentContainer castName={this.state.englishName} castId={this.state.id} currentUser={this.props.currentUser} />
       </>
     )

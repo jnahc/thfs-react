@@ -10,8 +10,7 @@ class CastCommentContainer extends Component {
     castId: "",
     }
     this.handleDelete = this.handleDelete.bind(this);
-    
-
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount () {
@@ -24,7 +23,16 @@ class CastCommentContainer extends Component {
     this.setState({
       castId: currentCast,      
     })
+  }
 
+  handleSubmit = (id, body) => {    
+    console.log('handleSubmit body & id',id, body)
+    axios.put(`${process.env.REACT_APP_API_URL}/comments/${id}`, body)
+      .then((res) => {
+        console.log(res)
+        this.grabCommentList()  
+      })
+      .catch((err) => console.log(err))
   }
 
   handleDelete = (postId) => {
@@ -41,6 +49,9 @@ class CastCommentContainer extends Component {
     axios.get(`${process.env.REACT_APP_API_URL}/comments/cast/${castId}`)
       .then((res) => {
         this.setState({
+          commentList:[]
+        })
+        this.setState({
           commentList: res.data.comments
         });
       })
@@ -51,7 +62,7 @@ class CastCommentContainer extends Component {
     return (
       <>
         <h1>This is the CastCommentContainer</h1>
-        <CastDetailCommentList currentCast={this.state.castId} currentUser={this.props.currentUser} commentList={this.state.commentList} castName={this.props.castName} handleDelete={this.handleDelete} />
+        <CastDetailCommentList currentCast={this.state.castId} currentUser={this.props.currentUser} commentList={this.state.commentList} castName={this.props.castName} handleDelete={this.handleDelete} handleSubmit={this.handleSubmit} />
       </>
     );
   };

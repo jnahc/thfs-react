@@ -3,6 +3,12 @@ import React from 'react';
 
 const CastDetailCommentRow = (props) => {
 
+  let handleSubmitandSetEditFalse = () => {
+    console.log(props)
+    props.handleSubmit(props.details.comment._id, {body:props.body})
+    props.setEditFalse()    
+  }
+
   if(!props.editComment && !props.deleteComment && props.currentUser === props.details.comment.author){
     return (    
       <div className='card'>
@@ -21,11 +27,11 @@ const CastDetailCommentRow = (props) => {
       <>
       <div className="card">
         <h1 className="mb-3" id="words-edit-post">Edit Post</h1>
-        <form onSubmit={props.handleSubmit}>
+        <form>
           <div className="form-group">
             <label htmlFor="body">Comment</label>
             <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="body" name="body" value={props.body} />
-            <button id="comment-button" className="btn btn-primary">Save Comment</button>
+            <div onClick={handleSubmitandSetEditFalse} id="comment-button" className="btn btn-primary">Save Comment</div>
           </div>
         </form>
       </div>

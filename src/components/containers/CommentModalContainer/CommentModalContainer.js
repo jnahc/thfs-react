@@ -31,7 +31,8 @@ class CommentModalContainer extends Component {
     axios.post(`${process.env.REACT_APP_API_URL}/comments/${this.props.currentUser}/${window.location.pathname.split('/')[2]}`, this.state)
       .then((res) => {
         console.log(res);
-        window.location.reload();
+        // window.location.reload();
+        this.props.setProps()
       })
       .catch((err) => console.log(err));
     this.setState({
