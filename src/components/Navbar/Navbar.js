@@ -22,7 +22,7 @@ const Navbar = (props) => {
               {!props.currentUser && <Login currentUser={props.currentUser} setCurrentUser={props.setCurrentUser} />}
             </li>
             <li className="nav-item" id="register-button">
-              {!props.currentUser && <Register />}
+              {!props.currentUser && <Register setCurrentUser={props.setCurrentUser} />}
             </li>
             <li className="nav-item">
               {props.currentUser && <NavLink className="nav-link title-color" exact to="/cast-list">Cast</NavLink>}

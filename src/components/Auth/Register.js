@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
 import RegisterModal from './RegisterModal';
 import axios from 'axios';
 
@@ -20,11 +21,22 @@ class Register extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
 
     axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, this.state)
       .then((res) => {
-        console.log(res);
+        console.log(res)
+        console.log(this.state)
+        axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, {
+          email: this.state.email,
+          password: this.state.password
+        },{
+          withCredentials: true,
+        })
+          .then((res) => {
+            this.props.setCurrentUser(res.data.data);
+            this.props.history.push('/profile');
+          })
+          .catch((err) => console.log(err))
       })
       .catch((err) => console.log(err));
   };
@@ -36,4 +48,4 @@ class Register extends Component {
   };
 };
 
-export default Register;
+export default withRouter(Register);
