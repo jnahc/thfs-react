@@ -60,10 +60,18 @@ class CastCommentContainer extends Component {
 
   render () {
     return (
-      <>
+      <div className="col">
         <h1>This is the CastCommentContainer</h1>
-        <CastDetailCommentList currentCast={this.state.castId} currentUser={this.props.currentUser} commentList={this.state.commentList} castName={this.props.castName} handleDelete={this.handleDelete} handleSubmit={this.handleSubmit} grabCommentList={this.grabCommentList} />
-      </>
+        <CastDetailCommentList 
+          currentCast={this.state.castId} 
+          currentUser={this.props.currentUser} 
+          commentList={this.state.commentList} 
+          castName={this.props.castName} 
+          handleDelete={this.handleDelete} 
+          handleSubmit={this.handleSubmit} 
+          grabCommentList={this.grabCommentList} 
+        />
+      </div>
     );
   };
 };

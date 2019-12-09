@@ -25,10 +25,10 @@ class CastListContainer extends Component {
 
   render () {
     return (
-      <>
+      <div className="container">
         <h1>This is the CastListContainer</h1>
         <CastList castList={this.state.castList} />
-      </>
+      </div>
     );
   };
 };

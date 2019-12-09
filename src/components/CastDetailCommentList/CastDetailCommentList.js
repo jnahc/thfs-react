@@ -19,7 +19,7 @@ const CastDetailCommentList = (props) => {
   });
 
   return (
-    <div>
+    <div className="col">
       This is the CastDetailCommentList component
       {list}
     </div>

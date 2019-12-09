@@ -26,15 +26,15 @@ class CommentModalContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('handleSubmit fired',this.state);
+    // console.log('handleSubmit on CMC fired',this.state);
     axios.post(`${process.env.REACT_APP_API_URL}/comments/${this.props.currentUser}/${window.location.pathname.split('/')[2]}`, this.state)
       .then((res) => {
         this.setState({
           body: "",
         });
-        console.log(res);
-        // window.location.reload();
-        this.props.setProps()
+        // console.log(res);
+        window.location.reload();
+        // this.props.setProps()
       })
       .catch((err) => console.log(err));
   };

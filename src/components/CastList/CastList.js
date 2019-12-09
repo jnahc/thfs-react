@@ -20,8 +20,7 @@ const CastList = (props) => {
   });
 
   return (
-    <div>
-      This is the CastList component
+    <div className="col-12">
       {list}
     </div>
   )
