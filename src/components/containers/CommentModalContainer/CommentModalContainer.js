@@ -15,9 +15,8 @@ class CommentModalContainer extends Component {
     this.setState({
       author: currentUser,
       cast: currentCast
-    })
-    
-  }
+    });
+  };
 
   handleChange = (event) => {
     this.setState({
@@ -30,14 +29,14 @@ class CommentModalContainer extends Component {
     console.log('handleSubmit fired',this.state);
     axios.post(`${process.env.REACT_APP_API_URL}/comments/${this.props.currentUser}/${window.location.pathname.split('/')[2]}`, this.state)
       .then((res) => {
+        this.setState({
+          body: "",
+        });
         console.log(res);
         // window.location.reload();
         this.props.setProps()
       })
       .catch((err) => console.log(err));
-    this.setState({
-      body: "",
-    });
   };
 
   render(){

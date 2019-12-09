@@ -36,6 +36,7 @@ class CastDetailContainer extends Component {
   setProps () {
     axios.get(`${process.env.REACT_APP_API_URL}/cast/${window.location.pathname.split('/')[2]}`)
       .then((res)=> {
+        console.log('setProps on CDC fired')
         this.setState({
           id:res.data.data._id,
           number: res.data.data.number,
@@ -63,9 +64,18 @@ class CastDetailContainer extends Component {
     return (
       <>
         <h2>This is the CastDetailContainer</h2>
-        <CastDetail castDetails={this.state} />
-        <CommentModalContainer currentUser={this.props.currentUser} setProps={this.setProps} />
-        <CastCommentContainer castName={this.state.englishName} castId={this.state.id} currentUser={this.props.currentUser} />
+        <CastDetail 
+          castDetails={this.state} 
+        />
+        <CommentModalContainer 
+          currentUser={this.props.currentUser} 
+          setProps={this.setProps} 
+        />
+        <CastCommentContainer 
+          castName={this.state.englishName} 
+          castId={this.state.id} 
+          currentUser={this.props.currentUser} 
+        />
       </>
     )
   }
