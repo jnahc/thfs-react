@@ -60,13 +60,17 @@ const CastDetailCommentRow = (props) => {
   } else {
     return (    
       <div className='card'>
-        <dl>
-          <dd>About: {props.castName}</dd>
-          <dd>Author: {props.details.author}</dd>
-          <dd>Text: {props.details.comment.body}</dd>
-          <dd>Date: {props.details.comment.dateCreated}</dd>
-        </dl>
-      </div> 
+        <div className="card-body">
+          <div className="card-title">Comment</div>
+          <img src={props.details.authorPic} alt={props.details.author}/>
+          <dl>
+            <dd>About: {props.castName}</dd>
+            <dd>Author: {props.details.author}</dd>
+            <dd>Text: {props.details.comment.body}</dd>
+            <dd>Date: {props.details.comment.dateCreated}</dd>
+          </dl>
+        </div>
+      </div>    
     )   
   } 
 }
