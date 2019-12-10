@@ -25,7 +25,7 @@ const Navbar = (props) => {
               {!props.currentUser && <Register setCurrentUser={props.setCurrentUser} />}
             </li>
             <li className="nav-item">
-              {props.currentUser && <NavLink className="nav-link title-color" exact to="/cast-list">Cast</NavLink>}
+              <NavLink className="nav-link title-color" exact to="/cast-list">Cast</NavLink>
             </li>
           
             <li className="nav-item">
