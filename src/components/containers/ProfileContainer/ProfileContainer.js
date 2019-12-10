@@ -2,15 +2,14 @@ import React, {Component} from 'react';
 import Profile from '../../Profile/Profile';
 import axios from 'axios'
 
+
 class ProfileContainer extends Component {
-  constructor () {
-    super();
-    this.state = {
-      profile: {},
-      firstName: '',
-      lastName: '',
-      favoriteCast: '',
-    }
+  state = {
+    profile: {},
+    firstName: '',
+    lastName: '',
+    picture: '',
+    editProfile: false,
   }
 
   componentDidMount () {
@@ -22,37 +21,44 @@ class ProfileContainer extends Component {
         profile: res.data.data,
         firstName: res.data.data.firstName,
         lastName: res.data.data.lastName,
-        favoriteCast: res.data.data.favoriteCast,
+        picture: res.data.data.picture,
       });
     })
     .catch((err) => console.log(err));
   }
 
-  handleChange (event) {
+  handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     });
   };
 
   handleSubmit = (event) => {
-    event.preventDefault();
-    const userId = localStorage.getItem('uid');
-    let newObj = Object.assign({}, this.state);
-    delete newObj.profile;
-    delete newObj.editProfile;
-    axios.put(`${process.env.REACT_APP_API_URL}/users/${userId}`, newObj, {
-      withCredentials: true,
+    event.preventDefault()
+    axios.put(`${process.env.REACT_APP_API_URL}/users/${this.props.currentUser}`, {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      picture: this.state.picture
     })
       .then((res) => {
-        this.props.setCurrentUser(res.data.data);
-        this.props.history.push(`/profile`);
-      })
-      .catch((err) => console.log(err));
-      this.setState({
-        editProfile: false,
-      });
-    };
+        console.log(res)
+        this.setEditFalse()
+      })    
+      .catch((err) => console.log(err))
+  };
   
+  setEditTrue = () => {
+    this.setState({
+      editProfile: true
+    })
+  }
+
+  setEditFalse = () => {
+    this.setState({
+      editProfile: false
+    })
+  }
+
   render () {
     if (localStorage.getItem('uid')){
       return (
@@ -63,7 +69,12 @@ class ProfileContainer extends Component {
                 profile={this.state.profile}
                 firstName={this.state.firstName}
                 lastName={this.state.lastName}
-                favoriteCast={this.state.favoriteCast}
+                picture={this.state.picture}
+                setEditTrue={this.setEditTrue}
+                setEditFalse={this.setEditFalse}
+                editProfile={this.state.editProfile}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
               />
             </div>
           </div>

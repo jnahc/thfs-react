@@ -47,8 +47,6 @@ const CastDetail = (props) => {
           <dd>japaneseName {props.castDetails.japaneseName}</dd>
           <dd>likes {props.castDetails.likes}</dd>
           <dd>Occupation: {props.castDetails.occupation} </dd>
-          {/* <dd>Picture 1 <img src={props.castDetails.picture1} alt={props.castDetails.englishName}/> </dd>
-          <dd>Picture 2 <img src={props.castDetails.picture2} alt={props.castDetails.englishName}/> </dd> */}
         </dl>
       </div>
     </div>

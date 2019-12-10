@@ -9,10 +9,18 @@ export default ({currentUser}) =>
 (
   <Switch>
     <Route exact path="/" component={Home} />
-    <Route path='/profile' component={ProfileContainer} />
+    <Route path='/profile'
+      render={() => 
+        <ProfileContainer currentUser={currentUser}/>
+      }
+    />
     <Route path='/cast-list' component={CastListContainer} />
     {/* <Route path='/cast/:castId' component={CastDetailContainer} /> /> */}
-    <Route path='/cast/:castId' render={() => <CastDetailContainer currentUser={currentUser} />} /> />
+    <Route path='/cast/:castId' 
+      render={() => 
+        <CastDetailContainer currentUser={currentUser}/>
+      } 
+    />
   </Switch>
   
 )
