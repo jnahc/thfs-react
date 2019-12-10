@@ -14,6 +14,7 @@ const CastDetailCommentRow = (props) => {
       <div className='card'>
         <div className="card-body">
           <div className="card-title">Comment</div>
+          <img src={props.details.authorPic} alt={props.details.author}/>
           <dl>
             <dd>About: {props.castName}</dd>
             <dd>Author: {props.details.author}</dd>

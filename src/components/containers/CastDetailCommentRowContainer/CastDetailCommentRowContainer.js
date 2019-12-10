@@ -11,6 +11,7 @@ class CastDetailCommentRowContainer extends Component {
       currentCast: "",
       comment: {},
       author: "",
+      authorPic: "",
       editComment: false,
       deleteComment: false,
       body: "",
@@ -45,7 +46,8 @@ class CastDetailCommentRowContainer extends Component {
     axios.get(`${process.env.REACT_APP_API_URL}/users/first/${this.props.comment.author}`)
       .then((res) => {
         this.setState({
-          author: res.data.data
+          author: res.data.data,
+          authorPic: res.data.data2
         });
         })
       .catch((err) => console.log(err))
