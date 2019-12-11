@@ -15,6 +15,29 @@
   animation: color-change-2x 5s linear infinite alternate both;
 }
 
+/* TEXT SHADOW */
+.nav-brand {
+  text-shadow: 1px 2px 4px #333333, 3px -4px 3px #A3A3A3;
+}
+
+a, .navbar, .nav-link, .nav-item, h3, .modal-content{
+  text-shadow: 1px 1px 1px #333333, -2px -2px -2px #A3A3A3;
+}
+
+h1, .card {
+  text-shadow: 1px 2px 5px #333333, -1px -1px 3px #A3A3A3;
+  color: rgb(133, 80, 37);
+}
+
+h5 {
+  text-shadow: 1px 1px 1px #333333, 2px 2px 2px #A3A3A3;
+  color: rgb(133, 80, 37);
+}
+
+.card {
+  text-shadow: 1px 2px 2px #333333, -1px -1px 2px #A3A3A3;
+  color: rgb(133, 80, 37);
+}
 
 /* HOME  */
 /* .home-title {
@@ -34,7 +57,7 @@ a, .navbar, .nav-link, .nav-item, h3, .modal-content{
 }
 
 h1, h5, .card, p {
-  color: #C68957;
+  color: rgb(133, 80, 37);
 }
 
 .cast-title {
