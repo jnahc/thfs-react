@@ -63,21 +63,20 @@ class CastDetailContainer extends Component {
   render () {
     return (
       <div className="container">
-        <h2>This is the CastDetailContainer</h2>
-          <div className="col">
-            <CastDetail 
-              castDetails={this.state} 
-            />
-            <CommentModalContainer 
-              currentUser={this.props.currentUser} 
-              setProps={this.setProps} 
-            />
-            <CastCommentContainer 
-              castName={this.state.englishName} 
-              castId={this.state.id} 
-              currentUser={this.props.currentUser} 
-            />
-          </div>
+        <div className="col">
+          <CastDetail 
+            castDetails={this.state} 
+          />
+          {this.props.currentUser && <CommentModalContainer 
+            currentUser={this.props.currentUser} 
+            setProps={this.setProps} 
+          />}
+          <CastCommentContainer 
+            castName={this.state.englishName} 
+            castId={this.state.id} 
+            currentUser={this.props.currentUser} 
+          />
+        </div>
       </div>
     );
   };

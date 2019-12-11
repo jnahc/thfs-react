@@ -1,13 +1,50 @@
+/* Color Theme SECTION  */
+/* ---Green	#90BB81---*/
+/* ---Brownish	#C68957---*/
+/* ---Light 	#E7DECD---*/
+/* ---Light 2	#CDBFAD---*/
+/* ---Dark	#493122---*/
+
+
+/* TEXT COLORS */
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #CDBFAD;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+a, .navbar, .nav-link .nav-item {
+  color: #493122;
+}
+
+h1, h5, .card, p {
+  color: #C68957;
+}
+
+.cast-title {
+  color: #90BB81;
+}
+
+.cast-description-front {
+  color: #493122;
+}
+
+/* IMAGE SIZING */
+.cast-list-image {
+  max-height: 400px;
+  object-fit: scale-down;
+
+}
+
+/* CAST LIST */
+
+.cast-list-card {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid #E7DECD;
+  
+}
+
+.cast-list-body {
+  background-color: #E7DECD;
 }

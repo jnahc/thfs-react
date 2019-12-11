@@ -61,7 +61,6 @@ class CastCommentContainer extends Component {
   render () {
     return (
       <div className="col">
-        <h1>This is the CastCommentContainer</h1>
         <CastDetailCommentList 
           currentCast={this.state.castId} 
           currentUser={this.props.currentUser} 

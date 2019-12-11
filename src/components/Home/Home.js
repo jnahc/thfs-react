@@ -6,11 +6,12 @@ const Home = () => (
  <div className="container">
    <div className="jumbotron jumbotron-fluid">
       <div className="container">
-        <h1 className="display-4">For the fans</h1>
-        <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        <h1 className="display-4">Terrace House Fan Site</h1>
+        <p className="lead">For the fans...</p>
+        <p>Let's talk Terrace House</p>
       </div>
     </div>
-    <div className="card bg-dark text-white">
+    <div className="card border-0">
       <img src="https://raw.git.generalassemb.ly/jeff-chan-sf-sei-05/thfs-api/master/images/th-images/th-inside-1.PNG" className="card-img" alt="..." />
       <div className="card-img-overlay">
         <h5 className="card-title">Card title</h5>
@@ -18,7 +19,7 @@ const Home = () => (
         <p className="card-text">Last updated 3 mins ago</p>
       </div>
     </div>
-    <div className="card bg-dark text-white">
+    <div className="card border-0 mt-3">
       <img src="https://raw.git.generalassemb.ly/jeff-chan-sf-sei-05/thfs-api/master/images/th-images/th-inside1.PNG" className="card-img" alt="..." />
       <div className="card-img-overlay">
         <h5 className="card-title">Card title</h5>

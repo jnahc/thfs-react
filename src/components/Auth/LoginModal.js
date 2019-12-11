@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 
 function LoginModal (props) {
   const [show, setShow] = useState(false);
@@ -9,9 +8,9 @@ function LoginModal (props) {
 
   return (
     <>
-      <Button variant="warning" onClick={handleShow}>
+      <div className="nav-link" variant="warning" onClick={handleShow}>
         Login
-      </Button>
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

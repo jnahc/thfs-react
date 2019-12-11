@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 
 function RegisterModal(props) {
 
@@ -10,9 +9,9 @@ function RegisterModal(props) {
 
   return (
     <>
-     <Button variant="primary" onClick={handleShow}>
+     <div className="nav-link" variant="primary" onClick={handleShow}>
        Register
-     </Button>
+     </div>
 
      <Modal show={show} onHide={handleClose}>
        <Modal.Header closeButton>
