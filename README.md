@@ -9,6 +9,22 @@ A Terrace House Fan SIte
 ### Description
 A site for the fans, you can see cast members and make comments on each member.
 
+### Technologies Used
+- React.js
+- Node Express
+- Bootstrap
+- CSS
+- HTML
+- MongoDB
+- JavaScript
+- iPhone
+- Slack
+- Instructors
+- Classmates
+- Google
+- Prayer
+- Heroku
+
 ### Installation Steps
 $npm i
 
