@@ -2,9 +2,9 @@
 A Terrace House Fan SIte
 
 ### Link
-https://thfs-react.herokuapp.com/
-https://git.generalassemb.ly/jeff-chan-sf-sei-05/thfs-react
-https://git.generalassemb.ly/jeff-chan-sf-sei-05/thfs-api
+- https://thfs-react.herokuapp.com/
+- https://git.generalassemb.ly/jeff-chan-sf-sei-05/thfs-react
+- https://git.generalassemb.ly/jeff-chan-sf-sei-05/thfs-api
 
 ### Description
 A site for the fans, you can see cast members and make comments on each member.
