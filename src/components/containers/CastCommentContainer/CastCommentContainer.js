@@ -60,7 +60,8 @@ class CastCommentContainer extends Component {
 
   render () {
     return (
-      <div className="col">
+      <div>
+        <h3 className="mt-2">Comments</h3>
         <CastDetailCommentList 
           currentCast={this.state.castId} 
           currentUser={this.props.currentUser} 
@@ -69,7 +70,7 @@ class CastCommentContainer extends Component {
           handleDelete={this.handleDelete} 
           handleSubmit={this.handleSubmit} 
           grabCommentList={this.grabCommentList} 
-        />
+        />    
       </div>
     );
   };

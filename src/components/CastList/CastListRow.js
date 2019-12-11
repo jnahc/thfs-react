@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const CastListRow = (props) => {
   return (
-  <div className="card mb-3 cast-list-card" style={{
+  <div className="card mb-3 cast-list-card rounded shadow-md" style={{
     backgroundImage: `url(${props.mainPicture})`,
     }}>
     <img src={`${props.mainPicture}`} className="m-3 card-img-top cast-list-image round-lg" alt={props.englishName}  />

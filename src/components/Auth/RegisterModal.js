@@ -13,7 +13,7 @@ function RegisterModal(props) {
        Register
      </div>
 
-     <Modal show={show} onHide={handleClose}>
+     <Modal className="roudned shadow-lg" show={show} onHide={handleClose}>
        <Modal.Header closeButton>
          <Modal.Title>
            Register
@@ -43,7 +43,10 @@ function RegisterModal(props) {
                 <label htmlFor="password2">Confirm Password</label>
                 <input onChange={props.handleChange} className="form-control form-control-lg" type="password" id="password2" name="password2" value={props.user.password2} />
               </div>
-              <button id="register-button" onClick={handleClose} className="btn btn-primary" type="submit">Register</button><button id="register-close" onClick={handleClose} >Cancel</button>
+              <div className="row">
+              <button id="register-button" onClick={handleClose} className="btn" type="submit">Register</button>
+              <button id="register-close" className="btn" onClick={handleClose} >Cancel</button>
+              </div>
             </form>
           </div>
         </div>

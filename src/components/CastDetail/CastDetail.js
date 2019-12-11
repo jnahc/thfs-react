@@ -32,10 +32,8 @@ const CastDetail = (props) => {
           <span className="sr-only">Next</span>
         </a>
       </div>
-      <div className="card-body">
-        <h5 className="card-title cast-title">{props.castDetails.englishName} Profile</h5>
-      </div>
-      <div className="card-body">
+      <div className="card-body cast-detail-body">
+        <h5 className="card-title cast-title mb-3">{props.castDetails.englishName} Profile</h5>
         <dl>
           <dd><span className="cast-description-front">Birth Date</span>: {props.castDetails.birthDate.toLocaleString().substring(0, 10)}</dd>
           <dd><span className="cast-description-front"># of Comments</span>:  {props.castDetails.comments.length}</dd>

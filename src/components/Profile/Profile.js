@@ -7,7 +7,7 @@ const Profile = (props) => {
       <div className="card">
         <div className="card-body">
           <div className="card-title">
-            Edit Profile
+            <h3>Edit Profile</h3>
           </div>
           <form>
             <div className="form-group">
@@ -22,8 +22,8 @@ const Profile = (props) => {
               <label htmlFor="picture">Picture</label>
               <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="picture" name="picture" value={props.picture} />
             </div>
-            <div id="edit-button1" className="btn btn-warning editButton" onClick={props.handleSubmit}>Save</div>
-            <div id="edit-button1" className="btn btn-warning editButton" onClick={props.setEditFalse}>Cancel</div>
+            <div id="edit-button1" className="btn editButton" onClick={props.handleSubmit}>Save</div>
+            <div id="edit-button1" className="btn" onClick={props.setEditFalse}>Cancel</div>
           </form>
         </div>
       </div>
@@ -33,7 +33,7 @@ const Profile = (props) => {
 
   } else {
     return (
-      <div className="profile-border" style={{paddingTop:50}}>
+      <div className="profile-box" style={{paddingTop:50}}>
         <h1 className="userName" id="first-last-name-pro">{props.firstName}  {props.lastName}'s Profile</h1>
         <p><strong>Date Joined: </strong> {props.profile.dateJoined && props.profile.dateJoined.toLocaleString().substring(0, 10)}</p>
         <p> <img src={props.profile.picture} alt=""/> </p>

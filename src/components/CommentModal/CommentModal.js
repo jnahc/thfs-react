@@ -11,7 +11,7 @@ function CommentModal(props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button className="comment-button" onClick={handleShow}>
         Comment
       </Button>
 
@@ -24,11 +24,13 @@ function CommentModal(props) {
         <Modal.Body>
           <div className="col">
             <form onSubmit={props.handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="body">Comment</label>
+              <div className="form-group mt-n3">
+                <label htmlFor="body">Add Comment</label>
                 <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="body" name="body" value={props.comment.body} />
-                <button id="comment-button" onClick={handleClose} className="btn btn-primary">Save Comment</button>
-                <div id="comment-close" onClick={handleClose} >Cancel</div>
+                <div className="row mt-2">
+                  <button id="comment-button" onClick={handleClose} className="btn">Save Comment</button>
+                  <button id="comment-close" className="btn" onClick={handleClose} >Cancel</button>
+                </div>              
               </div>
             </form>
           </div>

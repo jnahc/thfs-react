@@ -18,10 +18,10 @@ const CastDetailCommentList = (props) => {
     )
   });
 
-  return (
-    <div className="col">
-      {list}
-    </div>
+  return ( 
+    <>
+      {list}   
+    </>
   )
 };
 

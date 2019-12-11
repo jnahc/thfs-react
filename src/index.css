@@ -5,14 +5,20 @@
 /* ---Light 2	#CDBFAD---*/
 /* ---Dark	#493122---*/
 
+* {
+  font-size: 1.1rem;
+  transition: 2s;
+}
+
+/* HOME  */
+.home-title {
+  background: rgb(205,191,173);
+  background: linear-gradient(184deg, rgba(205,191,173,1) 23%, rgba(231,222,205,1) 53%);
+}
 
 /* TEXT COLORS */
 
-body {
-  background: #CDBFAD;
-}
-
-a, .navbar, .nav-link .nav-item {
+a, .navbar, .nav-link, .nav-item, h3, .modal-content{
   color: #493122;
 }
 
@@ -24,7 +30,7 @@ h1, h5, .card, p {
   color: #90BB81;
 }
 
-.cast-description-front {
+.cast-description-front, .comment-description-front {
   color: #493122;
 }
 
@@ -32,7 +38,6 @@ h1, h5, .card, p {
 .cast-list-image {
   max-height: 400px;
   object-fit: scale-down;
-
 }
 
 /* CAST LIST */
@@ -42,9 +47,39 @@ h1, h5, .card, p {
   background-size: cover;
   background-repeat: no-repeat;
   border: 2px solid #E7DECD;
-  
 }
 
 .cast-list-body {
   background-color: #E7DECD;
 }
+
+/* CAST DETAIL  */
+.cast-detail-body, body {
+  background: rgb(231,222,205);
+  background: linear-gradient(20deg, rgba(231,222,205,1) 34%, rgba(205,191,173,1) 79%, rgba(144,187,129,1) 100%);
+
+}
+
+/* COMMENTS */
+.cast-comment-row {
+  background: rgb(231,222,205);
+  background: linear-gradient(142deg, rgba(231,222,205,1) 0%, rgba(205,191,173,1) 50%, rgba(73,49,34,1) 100%);
+}
+
+.comment-button {
+  background: #90BB81;
+  color: #E7DECD
+
+}
+
+/* MODALS  */
+.modal-content {
+  background: rgb(231,222,205);
+  background: radial-gradient(circle, rgba(231,222,205,1) 81%, rgba(205,191,173,1) 99%);
+}
+
+/* PROFILE  */
+.profile-box {
+  height: 100%;
+}
+
