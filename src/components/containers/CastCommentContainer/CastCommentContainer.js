@@ -13,7 +13,7 @@ class CastCommentContainer extends Component {
     this.setProps();
   }  
 
-  setProps () {
+  setProps = () => {
     let currentCast = window.location.pathname.split('/')[2];
     this.setState({
       castId: currentCast,      
@@ -39,7 +39,7 @@ class CastCommentContainer extends Component {
       .catch((err) => console.log(err))
   }
 
-  grabCommentList () {
+  grabCommentList = () => {
     const castId = window.location.pathname.split('/')[2];
     axios.get(`${process.env.REACT_APP_API_URL}/comments/cast/${castId}`)
       .then((res) => {
