@@ -12,7 +12,7 @@ class CastListContainer extends Component {
     this.grabCastList();
   }
 
-  grabCastList () {
+  grabCastList = () => {
     axios.get(`${process.env.REACT_APP_API_URL}/cast`)
       .then((res) => {
         console.log(res)

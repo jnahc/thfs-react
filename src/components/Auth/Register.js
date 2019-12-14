@@ -24,7 +24,7 @@ class Register extends Component {
 
     axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, this.state)
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         console.log(this.state)
         axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, {
           email: this.state.email,

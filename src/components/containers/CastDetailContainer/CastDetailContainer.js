@@ -5,35 +5,31 @@ import CommentModalContainer from "../CommentModalContainer/CommentModalContaine
 import CastCommentContainer from "../CastCommentContainer/CastCommentContainer";
 
 class CastDetailContainer extends Component {
-  constructor(){
-    super();
-    this.state = {
-      id: "",
-      number: "",
-      englishName: "",
-      japaneseName: "",
-      nickName: "",
-      occupation: "",
-      birthDate: "",
-      gender: "",
-      firstEpisodeAppeared: "",
-      lastEpisodeAppeared: "",
-      mainPicture: "",
-      picture1: "",
-      picture2: "",
-      seasonsActive: [],
-      couples: [""],
-      comments: [""],
-    }
-    this.setProps = this.setProps.bind(this);
-  };
+  state = {
+    id: "",
+    number: "",
+    englishName: "",
+    japaneseName: "",
+    nickName: "",
+    occupation: "",
+    birthDate: "",
+    gender: "",
+    firstEpisodeAppeared: "",
+    lastEpisodeAppeared: "",
+    mainPicture: "",
+    picture1: "",
+    picture2: "",
+    seasonsActive: [],
+    couples: [""],
+    comments: [""],
+  }
 
   componentDidMount () {
     this.setProps();
   };
 
 
-  setProps () {
+  setProps = () => {
     axios.get(`${process.env.REACT_APP_API_URL}/cast/${window.location.pathname.split('/')[2]}`)
       .then((res)=> {
         // console.log('setProps on CDC fired')

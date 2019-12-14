@@ -3,14 +3,9 @@ import CastDetailCommentList from "../../CastDetailCommentList/CastDetailComment
 import axios from 'axios';
 
 class CastCommentContainer extends Component {
-  constructor(){
-    super();
-    this.state = {
+  state = {
     commentList: [],
     castId: "",
-    }
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount () {

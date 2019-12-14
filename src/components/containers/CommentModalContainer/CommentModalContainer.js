@@ -29,12 +29,12 @@ class CommentModalContainer extends Component {
     // console.log('handleSubmit on CMC fired',this.state);
     axios.post(`${process.env.REACT_APP_API_URL}/comments/${this.props.currentUser}/${window.location.pathname.split('/')[2]}`, this.state)
       .then((res) => {
-        this.setState({
-          body: "",
-        });
-        // console.log(res);
-        window.location.reload();
+        console.log(res);
+        // this.setState({
+        //   body: "",
+        // });
         // this.props.setProps()
+        // window.location.reload();
       })
       .catch((err) => console.log(err));
   };
