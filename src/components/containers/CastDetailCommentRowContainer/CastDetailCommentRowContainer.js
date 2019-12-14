@@ -4,23 +4,15 @@ import CastDetailCommentRow from "../../CastDetailCommentRow/CastDetailCommentRo
 import axios from 'axios';
 
 class CastDetailCommentRowContainer extends Component {
-  constructor(){
-    super();
-    this.state = {
-      currentUser: "",
-      currentCast: "",
-      comment: {},
-      author: "",
-      authorPic: "",
-      editComment: false,
-      deleteComment: false,
-      body: "",
-    }
-    this.onEdit = this.onEdit.bind(this);
-    this.setEditFalse = this.setEditFalse.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.setDeleteFalse = this.setDeleteFalse.bind(this);
-    this.setDeleteTrue = this.setDeleteTrue.bind(this);
+  state = {
+    currentUser: "",
+    currentCast: "",
+    comment: {},
+    author: "",
+    authorPic: "",
+    editComment: false,
+    deleteComment: false,
+    body: "",
   }
 
   componentDidMount() {
@@ -29,7 +21,7 @@ class CastDetailCommentRowContainer extends Component {
 
   }
 
-  setProps (){
+  setProps = () => {
     const currentUserId=this.props.currentUser
     const currentCastId=this.props.currentCast
     const commentInfo=this.props.comment
@@ -42,7 +34,7 @@ class CastDetailCommentRowContainer extends Component {
     })  
   }
 
-  grabAuthorName () {
+  grabAuthorName = () => {
     axios.get(`${process.env.REACT_APP_API_URL}/users/first/${this.props.comment.author}`)
       .then((res) => {
         this.setState({
@@ -53,31 +45,31 @@ class CastDetailCommentRowContainer extends Component {
       .catch((err) => console.log(err))
   } 
 
-  onEdit () {
+  onEdit = () => {
     this.setState({
       editComment: true,
     })
   }
 
-  setEditFalse() {
+  setEditFalse = () => {
     this.setState({
       editComment: false,
     })
   }
 
-  setDeleteTrue (){    
+  setDeleteTrue = () => {    
     this.setState({
       deleteComment: true
     })
   }
 
-  setDeleteFalse (){    
+  setDeleteFalse = () => {    
     this.setState({
       deleteComment: false
     })
   }
 
-  handleChange (event) {
+  handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -98,9 +90,6 @@ class CastDetailCommentRowContainer extends Component {
   // }
 
 
-
-
-  
   render () {
     return (
       <>
