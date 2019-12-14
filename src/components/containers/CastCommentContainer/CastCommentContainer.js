@@ -4,12 +4,11 @@ import axios from 'axios';
 
 class CastCommentContainer extends Component {
   state = {
-    commentList: [],
     castId: "",
   }
 
   componentDidMount () {
-    this.grabCommentList();
+    this.props.grabCommentList();
     this.setProps();
   }  
 
@@ -39,19 +38,19 @@ class CastCommentContainer extends Component {
       .catch((err) => console.log(err))
   }
 
-  grabCommentList = () => {
-    const castId = window.location.pathname.split('/')[2];
-    axios.get(`${process.env.REACT_APP_API_URL}/comments/cast/${castId}`)
-      .then((res) => {
-        this.setState({
-          commentList:[]
-        })
-        this.setState({
-          commentList: res.data.comments
-        });
-      })
-      .catch((err) => console.log(err));
-  }
+  // grabCommentList = () => {
+  //   const castId = window.location.pathname.split('/')[2];
+  //   axios.get(`${process.env.REACT_APP_API_URL}/comments/cast/${castId}`)
+  //     .then((res) => {
+  //       this.setState({
+  //         commentList:[]
+  //       })
+  //       this.setState({
+  //         commentList: res.data.comments
+  //       });
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
 
   render () {
     return (
@@ -60,11 +59,11 @@ class CastCommentContainer extends Component {
         <CastDetailCommentList 
           currentCast={this.state.castId} 
           currentUser={this.props.currentUser} 
-          commentList={this.state.commentList} 
+          commentList={this.props.commentList} 
           castName={this.props.castName} 
           handleDelete={this.handleDelete} 
           handleSubmit={this.handleSubmit} 
-          grabCommentList={this.grabCommentList} 
+          grabCommentList={this.props.grabCommentList} 
         />    
       </div>
     );

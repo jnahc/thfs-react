@@ -33,7 +33,7 @@ class CommentModalContainer extends Component {
         // this.setState({
         //   body: "",
         // });
-        // this.props.setProps()
+        this.props.grabCommentList()
         // window.location.reload();
       })
       .catch((err) => console.log(err));

@@ -22,12 +22,13 @@ class CastDetailContainer extends Component {
     seasonsActive: [],
     couples: [""],
     comments: [""],
+    commentList: [""]
   }
 
   componentDidMount () {
     this.setProps();
+    // this.grabCommentList();
   };
-
 
   setProps = () => {
     axios.get(`${process.env.REACT_APP_API_URL}/cast/${window.location.pathname.split('/')[2]}`)
@@ -50,11 +51,22 @@ class CastDetailContainer extends Component {
           seasonsActive: res.data.data.seasonsActive,
           likes: res.data.data.likes,
           couples: res.data.data.couples,
-          comments: res.data.data.comments
+          comments: res.data.data.comments,
         })
       })
       .catch((err) => console.log(err))
   };
+
+  grabCommentList = () => {
+    const castId = window.location.pathname.split('/')[2];
+    axios.get(`${process.env.REACT_APP_API_URL}/comments/cast/${castId}`)
+      .then((res) => {
+        this.setState({
+          commentList: res.data.comments
+        });
+      })
+      .catch((err) => console.log(err));
+  }
 
   render () {
     return (
@@ -65,12 +77,14 @@ class CastDetailContainer extends Component {
           />
           {this.props.currentUser && <CommentModalContainer 
             currentUser={this.props.currentUser} 
-            setProps={this.setProps} 
+            grabCommentList={this.grabCommentList} 
           />}
           <CastCommentContainer 
             castName={this.state.englishName} 
             castId={this.state.id} 
             currentUser={this.props.currentUser} 
+            grabCommentList={this.grabCommentList}
+            commentList={this.state.commentList}
           />
         </div>
       </div>
