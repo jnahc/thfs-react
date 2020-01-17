@@ -24,18 +24,17 @@ a, .navbar, .nav-link, .nav-item, h3, .modal-content{
   text-shadow: 1px 1px 1px #333333, -2px -2px -2px #A3A3A3;
 }
 
-h1, .card {
-  text-shadow: 1px 2px 5px #333333, -1px -1px 3px #A3A3A3;
+h1 {
+  text-shadow: 1px 2px 2px #333333, -1px -1px 3px #A3A3A3;
   color: rgb(133, 80, 37);
 }
 
 h5 {
-  text-shadow: 1px 1px 1px #333333, 2px 2px 2px #A3A3A3;
+  text-shadow: 1px 1px 1px #A3A3A3;
   color: rgb(133, 80, 37);
 }
 
-.card {
-  text-shadow: 1px 2px 2px #333333, -1px -1px 2px #A3A3A3;
+.card-body {
   color: rgb(133, 80, 37);
 }
 
