@@ -24,16 +24,16 @@ class CastCommentContainer extends Component {
     axios.put(`${process.env.REACT_APP_API_URL}/comments/${id}`, body)
       .then((res) => {
         console.log(res)
-        this.grabCommentList()  
+        this.props.grabCommentList()  
       })
       .catch((err) => console.log(err))
   }
 
-  handleDelete = (postId) => {
-    axios.delete(`${process.env.REACT_APP_API_URL}/comments/${postId}`)
+  handleDelete = (commentId, userId, castId) => {
+    axios.delete(`${process.env.REACT_APP_API_URL}/comments/${userId}/${castId}/${commentId}`)
       .then((res) => {
         console.log(res)
-        this.grabCommentList()     
+        this.props.grabCommentList()     
       })
       .catch((err) => console.log(err))
   }

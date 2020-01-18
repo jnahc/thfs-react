@@ -57,7 +57,7 @@ const CastDetailCommentRow = (props) => {
           <div className="card-title">Are you sure you want to delete?</div>
           <form>
             <div className="form-group">
-              <div onClick={()=>props.handleDelete(props.details.comment._id)} id="comment-button" className="btn mr-2">Delete</div>
+              <div onClick={()=>props.handleDelete(props.details.comment._id, props.details.currentUser, props.details.currentCast)} id="comment-button" className="btn mr-2">Delete</div>
               <div onClick={props.setDeleteFalse} className="btn ml-2">Cancel</div>
             </div>
           </form>
