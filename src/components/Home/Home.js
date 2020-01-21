@@ -1,4 +1,5 @@
 import React from 'react';
+import HomeCommentContainer from "../containers/HomeCommentContainer/HomeCommentContainer";
 
 import './Home.css'
 
@@ -11,16 +12,12 @@ const Home = () => (
         <p>Let's talk Terrace House</p>
       </div>
     </div>
+    <HomeCommentContainer/>
     <div className="card border-0 ">
       <img src="https://raw.git.generalassemb.ly/jeff-chan-sf-sei-05/thfs-api/master/images/th-images/th-inside-1.PNG" className="card-img kenburns-top rounded shadow-lg" alt="..." />
       <div className="card-img-overlay">  
       </div>
     </div>
-    {/* <div className="card border-0 mt-3">
-      <img src="https://raw.git.generalassemb.ly/jeff-chan-sf-sei-05/thfs-api/master/images/th-images/th-inside1.PNG" className="card-img" alt="..." />
-      <div className="card-img-overlay">       
-      </div>
-    </div> */}
  </div>
 )
 
