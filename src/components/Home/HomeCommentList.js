@@ -1,22 +1,23 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom'
-import HomeCommentRowContainer from "./HomeCommentRowContainer"
+import HomeCommentRow from "./HomeCommentRow"
 
 const HomeCommentList = (props) => {
   const list = props.allCommentList.map((comment)=>{
+
     return (
-      <HomeCommentRowContainer
-        key={comment.id}
+      <HomeCommentRow
+        key={comment._id}
         comment={comment}
       />
     )
   });
+
   return(
-    <>
+    <div>
       {list}
       This is the HomeCommentList
-    </>
+    </div>
   );
 };
 
-export default withRouter(HomeCommentList);
+export default HomeCommentList;

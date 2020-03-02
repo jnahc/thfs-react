@@ -4,7 +4,7 @@ import axios from 'axios';
 
 class HomeCommentContainer extends Component {
   state = {
-    allCommentList: [""],
+    allCommentList: [],
   }
 
   componentDidMount () {

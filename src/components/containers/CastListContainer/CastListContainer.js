@@ -5,7 +5,7 @@ import axios from 'axios';
 
 class CastListContainer extends Component {
   state = {
-    castList:[]
+    castList:[],
   }
 
   componentDidMount () {
@@ -15,7 +15,6 @@ class CastListContainer extends Component {
   grabCastList = () => {
     axios.get(`${process.env.REACT_APP_API_URL}/cast`)
       .then((res) => {
-        console.log(res)
         this.setState({
           castList: res.data.data
         });
