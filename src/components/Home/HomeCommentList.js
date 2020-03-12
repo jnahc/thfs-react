@@ -15,7 +15,6 @@ const HomeCommentList = (props) => {
   return(
     <div>
       {list}
-      This is the HomeCommentList
     </div>
   );
 };

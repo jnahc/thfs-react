@@ -24,7 +24,7 @@ class HomeCommentContainer extends Component {
   render () {
     return (
       <div>
-        <p>This is the HomeCommentContainer</p>
+        <h3 className="mt-2">Recent Comments</h3>
         <HomeCommentList
           allCommentList={this.state.allCommentList}
         />

@@ -13,11 +13,11 @@ const Home = () => (
       </div>
     </div>
     <HomeCommentContainer/>
-    <div className="card border-0 ">
+    {/* <div className="card border-0 ">
       <img src="https://raw.git.generalassemb.ly/jeff-chan-sf-sei-05/thfs-api/master/images/th-images/th-inside-1.PNG" className="card-img kenburns-top rounded shadow-lg" alt="..." />
       <div className="card-img-overlay">  
       </div>
-    </div>
+    </div> */}
  </div>
 )
 
